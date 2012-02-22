@@ -1,6 +1,6 @@
 using System;
 
-namespace FFWD.WP7
+namespace FFWD.Unity.Tests
 {
 #if WINDOWS || XBOX
     static class Program

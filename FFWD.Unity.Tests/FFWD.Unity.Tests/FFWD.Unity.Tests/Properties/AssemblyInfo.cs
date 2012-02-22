@@ -1,13 +1,12 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Resources;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FFWD.WP7")]
-[assembly: AssemblyProduct("FFWD.WP7")]
+[assembly: AssemblyTitle("FFWD.Unity.Tests")]
+[assembly: AssemblyProduct("FFWD.Unity.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
@@ -23,7 +22,7 @@ using System.Resources;
 // On Windows, the following GUID is for the ID of the typelib if this
 // project is exposed to COM. On other platforms, it unique identifies the
 // title storage container when deploying this assembly to the device.
-[assembly: Guid("6d6478fd-e864-4c86-bb39-35b2a4c42431")]
+[assembly: Guid("a227c2e0-b3b8-4696-b886-50767b0fbbbd")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -33,4 +32,3 @@ using System.Resources;
 //      Revision
 //
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: NeutralResourcesLanguageAttribute("en-US")]

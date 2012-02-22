@@ -7,10 +7,9 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Media;
 
-namespace FFWD.WP7
+namespace FFWD.Unity.Tests
 {
     /// <summary>
     /// This is the main type for your game
@@ -24,12 +23,6 @@ namespace FFWD.WP7
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-
-            // Frame rate is 30 fps by default for Windows Phone.
-            TargetElapsedTime = TimeSpan.FromTicks(333333);
-
-            // Extend battery life under lock.
-            InactiveSleepTime = TimeSpan.FromSeconds(1);
         }
 
         /// <summary>
@@ -41,7 +34,6 @@ namespace FFWD.WP7
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            Components.Add(new PressPlay.FFWD.Application(this));
 
             base.Initialize();
         }
@@ -67,7 +59,6 @@ namespace FFWD.WP7
             // TODO: Unload any non ContentManager content here
         }
 
-        System.Text.StringBuilder sb = new System.Text.StringBuilder();
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -76,8 +67,10 @@ namespace FFWD.WP7
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (PressPlay.FFWD.Input.GetKeyDown(Keys.Back))
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+
+            // TODO: Add your update logic here
 
             base.Update(gameTime);
         }
