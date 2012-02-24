@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{B0772C8A-00E4-591B-A5DA-D6207DD89A4E}</ProjectGuid>
+	<ProjectGuid>{697CFF5B-E2D6-23DD-59EC-474145E8C100}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,17 +44,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FFWD\ContentSerializerIgnoreAttribute.cs" />
-     <Compile Include="Assets\FFWD\FFWD_DontExportAttribute.cs" />
-     <Compile Include="Assets\FFWD\FFWD_ExportAsResourceAttribute.cs" />
-     <Compile Include="Assets\FFWD\FFWD_ExportOptionsAttribute.cs" />
-     <Compile Include="Assets\FFWD\FFWD_PolygonCollider.cs" />
-     <Compile Include="Assets\Scripts\GameObjects\AGameObjectCanBeConvertedToBool.cs" />
-     <Compile Include="Assets\Scripts\GameObjects\CloningAGameObject.cs" />
-     <Compile Include="Assets\Scripts\GameObjects\CloningHelper.cs" />
+     <Compile Include="Assets\Editor\FFWD\ExportSceneWizard.cs" />
+     <Compile Include="Assets\Editor\FFWD\PolygonColliderEditor.cs" />
+ <Reference Include="PressPlay.FFWD.Exporter">
+ <HintPath>Assets\Editor\FFWD\PressPlay.FFWD.Exporter.dll</HintPath>
+ </Reference>
  <Reference Include="FluentAssertions">
  <HintPath>Assets\Scripts\FluentAssertions.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-vs.csproj">
+      <Project>{B0772C8A-00E4-591B-A5DA-D6207DD89A4E}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

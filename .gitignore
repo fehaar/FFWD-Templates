@@ -43,6 +43,7 @@ obj/
 
 
 *.vsp
+*.userprefs
 PerformanceLogs/
 
 Unity template/Library
