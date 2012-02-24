@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using PressPlay.FFWD;
 
 namespace FFWD.Unity.Tests
 {
@@ -17,7 +18,6 @@ namespace FFWD.Unity.Tests
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
 
         public Game1()
         {
@@ -33,7 +33,20 @@ namespace FFWD.Unity.Tests
         /// </summary>
         protected override void Initialize()
         {
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 480;
+#if WINDOWS
+            this.IsMouseVisible = true;
+
+            graphics.IsFullScreen = false;
+#endif
+#if WINDOWS_PHONE || XBOX
+            graphics.IsFullScreen = true;
+#endif
+            graphics.ApplyChanges();
+
             // TODO: Add your initialization logic here
+            Components.Add(new Application(this));
 
             base.Initialize();
         }
@@ -44,10 +57,8 @@ namespace FFWD.Unity.Tests
         /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-
             // TODO: use this.Content to load your game content here
+            Application.LoadLevel("UnitTests");
         }
 
         /// <summary>
@@ -71,9 +82,6 @@ namespace FFWD.Unity.Tests
                 this.Exit();
 
             // TODO: Add your update logic here
-
-
-
             base.Update(gameTime);
         }
 
@@ -83,7 +91,7 @@ namespace FFWD.Unity.Tests
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Microsoft.Xna.Framework.Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
 

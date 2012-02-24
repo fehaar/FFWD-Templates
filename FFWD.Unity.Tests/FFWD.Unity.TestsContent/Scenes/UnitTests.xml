@@ -32,7 +32,6 @@
           <fieldOfView>60</fieldOfView>
           <nearClipPlane>0.3</nearClipPlane>
           <farClipPlane>1000</farClipPlane>
-          <hdr>false</hdr>
           <orthographicSize>100</orthographicSize>
           <orthographic>false</orthographic>
           <depth>-1</depth>
@@ -41,8 +40,6 @@
           <backgroundColor>05314D79</backgroundColor>
           <rect>0 0 1 1</rect>
           <clearFlags>Skybox</clearFlags>
-          <useOcclusionCulling>true</useOcclusionCulling>
-          <layerCullSpherical>false</layerCullSpherical>
         </c>
       </cs>
     </go>
