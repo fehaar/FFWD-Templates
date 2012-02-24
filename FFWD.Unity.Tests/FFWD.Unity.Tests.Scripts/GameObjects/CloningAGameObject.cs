@@ -3,6 +3,7 @@ using PressPlay.FFWD.Components;
 using Microsoft.Xna.Framework.Content;
 using System;
 using System.Collections.Generic;
+using FluentAssertions;
 
 public class CloningAGameObject : MonoBehaviour {
 
@@ -41,6 +42,7 @@ public class CloningAGameObject : MonoBehaviour {
 				((object)helpClone.objReferenceList).Should().NotBe(help.objReferenceList);
 				((object)helpClone.objReferenceList).Should().BeNull();
 			} catch ( Exception ex ) {
+				// Log the merror
 				Debug.LogError(ex.Message);
 			} finally {
 				Destroy(go);

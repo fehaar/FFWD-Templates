@@ -45,10 +45,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameObjects\AGameObjectCanBeConvertedToBool.cs" />
+    <Compile Include="GameObjects\CloningAGameObject.cs" />
+    <Compile Include="GameObjects\CloningHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scripts\GameObjects\AGameObjectCanBeConvertedToBool.cs" />
-    <Compile Include="Scripts\GameObjects\CloningAGameObject.cs" />
-    <Compile Include="Scripts\GameObjects\CloningHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework" />

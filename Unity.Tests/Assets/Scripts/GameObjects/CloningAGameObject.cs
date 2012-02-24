@@ -40,6 +40,7 @@ public class CloningAGameObject : MonoBehaviour {
 				((object)helpClone.objReferenceList).Should().NotBe(help.objReferenceList);
 				((object)helpClone.objReferenceList).Should().BeNull();
 			} catch ( Exception ex ) {
+				// Log the merror
 				Debug.LogError(ex.Message);
 			} finally {
 				Destroy(go);
