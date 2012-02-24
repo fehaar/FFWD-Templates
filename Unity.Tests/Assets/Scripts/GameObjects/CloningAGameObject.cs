@@ -23,9 +23,11 @@ public class CloningAGameObject : MonoBehaviour {
 			help.reference = gameObject;
 			help.referenceList = new List<GameObject>();
 			help.referenceList.Add(gameObject);
-			help.objReference = new CloningHelper.CloneObject();
-			help.objReferenceList = new List<CloningHelper.CloneObject>();
+			help.referenceArray = new GameObject[] { gameObject };
+			help.objReference = new CloneObject();
+			help.objReferenceList = new List<CloneObject>();
 			help.objReferenceList.Add(help.objReference);
+			help.objReferenceArray = new CloneObject[] { help.objReference };
 			
 			CloningHelper helpClone = (CloningHelper)Instantiate(help);
 			
@@ -35,17 +37,21 @@ public class CloningAGameObject : MonoBehaviour {
 				((object)helpClone.referenceList).Should().NotBe(help.referenceList);
 				helpClone.referenceList.Should().NotBeEmpty();
 				helpClone.referenceList.Should().Contain(gameObject);
+				helpClone.referenceArray.Should().NotBeNull();
+				helpClone.referenceArray.Should().NotBeEmpty();
+				helpClone.referenceArray.Should().Contain(gameObject);
 				helpClone.objReference.Should().NotBe(help.objReference);
 				helpClone.objReference.Should().BeNull();
+				helpClone.objReferenceArray.Should().BeNull();
 				((object)helpClone.objReferenceList).Should().NotBe(help.objReferenceList);
 				((object)helpClone.objReferenceList).Should().BeNull();
+				Debug.Log(GetType().Name + " succeeded");
 			} catch ( Exception ex ) {
 				// Log the merror
 				Debug.LogError(ex.Message);
 			} finally {
 				Destroy(go);
 				Destroy(helpClone.gameObject);
-				Debug.Log(GetType().Name + " succeeded");
 			}
 		}
 	}
