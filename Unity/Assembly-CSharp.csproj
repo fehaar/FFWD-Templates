@@ -44,7 +44,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AGameObjectCanBeConvertedToBool.cs" />
+     <Compile Include="Assets\FFWD\ContentSerializerIgnoreAttribute.cs" />
+     <Compile Include="Assets\FFWD\FFWD_DontExportAttribute.cs" />
+     <Compile Include="Assets\FFWD\FFWD_ExportAsResourceAttribute.cs" />
+     <Compile Include="Assets\FFWD\FFWD_ExportOptionsAttribute.cs" />
+     <Compile Include="Assets\FFWD\FFWD_PolygonCollider.cs" />
+     <Compile Include="Assets\FFWD\XNAEllipsoidParticleEmitter.cs" />
+     <Compile Include="Assets\FFWD\XNALineRendererExport.cs" />
+     <Compile Include="Assets\FFWD\XNAMeshCollider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

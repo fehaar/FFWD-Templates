@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{CD8C9303-404B-FB8D-6B9B-21988D5CAC0A}</ProjectGuid>
+	<ProjectGuid>{6311E6C6-0A20-383B-320B-694068DE37A5}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,14 +44,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FFWD\ContentSerializerIgnoreAttribute.cs" />
-     <Compile Include="Assets\FFWD\FFWD_DontExportAttribute.cs" />
-     <Compile Include="Assets\FFWD\FFWD_ExportAsResourceAttribute.cs" />
-     <Compile Include="Assets\FFWD\FFWD_ExportOptionsAttribute.cs" />
-     <Compile Include="Assets\FFWD\FFWD_PolygonCollider.cs" />
-     <Compile Include="Assets\FFWD\XNAEllipsoidParticleEmitter.cs" />
-     <Compile Include="Assets\FFWD\XNALineRendererExport.cs" />
-     <Compile Include="Assets\FFWD\XNAMeshCollider.cs" />
+     <Compile Include="Assets\Editor\FFWD\ExportSceneWizard.cs" />
+     <Compile Include="Assets\Editor\FFWD\PolygonColliderEditor.cs" />
+ <Reference Include="PressPlay.FFWD.Exporter">
+ <HintPath>Assets\Editor\FFWD\PressPlay.FFWD.Exporter.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{CD8C9303-404B-FB8D-6B9B-21988D5CAC0A}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

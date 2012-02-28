@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XnaContent>
+  <Asset Type="System.String[]">
+    <!--  Add the names of textures that need to be sorted to avoid z-fighting -->
+    <!--  <Item>Default</Item>  -->
+  </Asset>
+</XnaContent>
