@@ -62,9 +62,19 @@
       <Project>{1034C53A-128D-4F83-BAC0-706151EAEC94}</Project>
       <Name>PressPlay.FFWD.X360</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FFWD.Template.Content\FFWD.Template.Content.contentproj">
+      <Project>{E5DFEFA2-635A-416B-957E-0AB2BC297BCB}</Project>
+      <Name>FFWD.Template.Content %28Content%29</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
+    </ProjectReference>
     <ProjectReference Include="..\FFWD.Template.Scripts\FFWD.Template.Scripts.X360.csproj">
       <Project>{1C8FE13D-BEAF-437C-908A-5AC780102B31}</Project>
       <Name>FFWD.Template.Scripts.X360</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FFWD.Template.XmlContent\FFWD.Template.XmlContent.contentproj">
+      <Project>{5E05D831-E8A3-4D6D-909B-8949D3BABA41}</Project>
+      <Name>FFWD.Template.XmlContent %28Content%29</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
