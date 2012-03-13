@@ -69,9 +69,19 @@
       <Project>{2370CE44-C54A-4553-B0C1-5971DA50254A}</Project>
       <Name>PressPlay.FFWD.WP7</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FFWD.Template.Content\FFWD.Template.Content.contentproj">
+      <Project>{E5DFEFA2-635A-416B-957E-0AB2BC297BCB}</Project>
+      <Name>FFWD.Template.Content %28Content%29</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
+    </ProjectReference>
     <ProjectReference Include="..\FFWD.Template.Scripts\FFWD.Template.Scripts.WP7.csproj">
       <Project>{6062F254-F991-49B4-953B-D5867416C1E6}</Project>
       <Name>FFWD.Unity.Tests.Scripts.WP7</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FFWD.Template.XmlContent\FFWD.Template.XmlContent.contentproj">
+      <Project>{5E05D831-E8A3-4D6D-909B-8949D3BABA41}</Project>
+      <Name>FFWD.Template.XmlContent %28Content%29</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
