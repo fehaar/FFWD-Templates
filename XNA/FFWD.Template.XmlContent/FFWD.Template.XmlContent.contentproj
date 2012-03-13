@@ -59,9 +59,14 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
+  -->
+  <UsingTask TaskName="PressPlay.FFWD.BuildTasks.SetLocale" AssemblyFile="PressPlay.FFWD.BuildTasks.dll"/>
   <Target Name="BeforeBuild">
+    <SetLocale>
+      <Output TaskParameter="PrevLocale" ItemName="OrigLocale"/>
+    </SetLocale>
   </Target>
   <Target Name="AfterBuild">
+    <SetLocale Locale="@(OrigLocale)"/>
   </Target>
-  -->
 </Project>
