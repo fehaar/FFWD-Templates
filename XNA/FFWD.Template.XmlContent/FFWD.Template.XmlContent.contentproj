@@ -21,6 +21,9 @@
   <PropertyGroup>
     <RootNamespace>FFWD.Unity.TestsContent</RootNamespace>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.EffectImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.FBXImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
@@ -57,10 +60,44 @@
     <Folder Include="Scenes\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
+  
+  <!-- Customizations to change locale before compilation and restore it after -->
+  <!-- Needed to properly treat dots in the XMLs as decimal separators -->
+  <UsingTask TaskName="PressPlay.FFWD.BuildTasks.SetLocale" AssemblyFile="PressPlay.FFWD.BuildTasks.dll" />
+  <!-- Apparently ContentPipeline.targets does not define PreBuildEvent and PostBuildEvent -->
+  <!-- However, they are still used if defined -->
+  <Target Name="PreBuildEvent" DependsOnTargets="$(PreBuildEventDependsOn)"/>
+  <Target Name="PostBuildEvent" DependsOnTargets="$(PostBuildEventDependsOn)"/>
+  <PropertyGroup>
+    <PreBuildEventDependsOn>
+      $(PreBuildEventDependsOn);
+      EstablishUSLocale
+    </PreBuildEventDependsOn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEventDependsOn>
+      $(PostBuildEventDependsOn);
+      RestoreOriginalLocale
+    </PostBuildEventDependsOn>
+  </PropertyGroup>
+  
+  <Target Name="EstablishUSLocale">
+    <SetLocale Locale="en-US">
+      <Output TaskParameter="PrevLocale" ItemName="OrigLocale" />
+    </SetLocale>
+  </Target>
+  
+  <Target Name="RestoreOriginalLocale">
+    <SetLocale Locale="@(OrigLocale)" />
+  </Target>
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
+  -->
+  <!--
   <Target Name="BeforeBuild">
   </Target>
+  -->
+  <!--
   <Target Name="AfterBuild">
   </Target>
   -->
