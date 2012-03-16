@@ -56,18 +56,15 @@
       <Processor>PassThroughProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scenes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
-  
   <!-- Customizations to change locale before compilation and restore it after -->
   <!-- Needed to properly treat dots in the XMLs as decimal separators -->
   <UsingTask TaskName="PressPlay.FFWD.BuildTasks.SetLocale" AssemblyFile="PressPlay.FFWD.BuildTasks.dll" />
   <!-- Apparently ContentPipeline.targets does not define PreBuildEvent and PostBuildEvent -->
   <!-- However, they are still used if defined -->
-  <Target Name="PreBuildEvent" DependsOnTargets="$(PreBuildEventDependsOn)"/>
-  <Target Name="PostBuildEvent" DependsOnTargets="$(PostBuildEventDependsOn)"/>
+  <Target Name="PreBuildEvent" DependsOnTargets="$(PreBuildEventDependsOn)" />
+  <Target Name="PostBuildEvent" DependsOnTargets="$(PostBuildEventDependsOn)" />
   <PropertyGroup>
     <PreBuildEventDependsOn>
       $(PreBuildEventDependsOn);
@@ -80,13 +77,11 @@
       RestoreOriginalLocale
     </PostBuildEventDependsOn>
   </PropertyGroup>
-  
   <Target Name="EstablishUSLocale">
     <SetLocale Locale="en-US">
       <Output TaskParameter="PrevLocale" ItemName="OrigLocale" />
     </SetLocale>
   </Target>
-  
   <Target Name="RestoreOriginalLocale">
     <SetLocale Locale="@(OrigLocale)" />
   </Target>
